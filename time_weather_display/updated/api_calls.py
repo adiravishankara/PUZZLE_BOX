@@ -18,7 +18,7 @@ def get_weather(location="Nakano"):
     result = requests.get("https://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid={}&units=metric".format(lat, lon, owm_key)).json()
     weather = result
 
-    print(weather)
+    return weather
 
 
 if __name__ == '__main__':
