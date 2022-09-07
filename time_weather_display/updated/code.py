@@ -38,5 +38,7 @@ class time_weather_display:
         self.display.update_screen_full(self.graphics.image)
 
 
+if __name__ == '__main__':
+    time_weather_display()
 
 
