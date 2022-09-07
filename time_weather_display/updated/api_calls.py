@@ -23,4 +23,4 @@ def get_weather(location="Nakano"):
 
 if __name__ == '__main__':
     get_weather()
-    print(get_time())
+    print(get_time()[1][:-3])

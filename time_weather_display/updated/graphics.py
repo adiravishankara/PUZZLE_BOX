@@ -73,7 +73,7 @@ class graphics:
         else:
             self.date = None
 
-        self.current_time = time_data[1]
+        self.current_time = time_data[1][:-3]
 
     def draw_display(self, WHITEBG=True):
         if WHITEBG:
@@ -87,7 +87,7 @@ class graphics:
         self.draw_weather_icon()
         self.draw_temperature()
         self.draw_weather_condition()
-        self.draw_weather_description()
+        #self.draw_weather_description()
         self.draw_city_name()
         self.draw_time()
 

@@ -12,7 +12,7 @@ class time_weather_display:
         self.graphics = graphics(self.display.display)
         self.tzdb_key = get_tzdb_cred()
         self.owm_key = get_owm_cred()
-        schedule.every(1).minutes.do(self.update_screen)
+        schedule.every(1).minutes.do(lambda: self.update_screen())
         while True:
             schedule.run_pending()
             time.sleep(1)
