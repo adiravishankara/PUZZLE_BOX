@@ -4,7 +4,7 @@ import json
 
 aio_uname, aio_pass = get_aio_cred()
 
-aio = Client("adiravishankara", "aio_qdSC53dZVejYLxotWcONTIrqXtAL")
+aio = Client("adiravishankara", "aio_VQmJ25zRMeTED2cw3xSZegTKxfdx")
 print(aio.feeds())
 
 pico_feed = aio.feeds('pico')
