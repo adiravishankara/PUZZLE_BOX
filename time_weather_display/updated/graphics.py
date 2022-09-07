@@ -78,7 +78,7 @@ class graphics:
 
         self.current_time = time_data[1]
 
-    def draw_display(self, WHITEBG):
+    def draw_display(self, WHITEBG=True):
         if WHITEBG:
             self.image = Image.new("RGB", (self.d_width, self.d_height), color=self.WHITE)
             self.fill_color = self.BLACK
