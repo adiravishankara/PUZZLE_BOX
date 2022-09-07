@@ -1,7 +1,4 @@
-from datetime import datetime
-import json
 from PIL import Image, ImageDraw, ImageFont
-from adafruit_epd.epd import Adafruit_EPD
 
 
 class graphics:
@@ -66,7 +63,7 @@ class graphics:
         else:
             self.weather_description = None
 
-        self.city_name = "{}, {}".format(weather["name"][0], weather["sys"]["country"])
+        self.city_name = "{}, {}".format(weather["name"], weather["sys"]["country"])
 
         self._weather_icon = self.ICON_MAP[weather["weather"][0]["icon"]]
 
@@ -104,7 +101,7 @@ class graphics:
             ),
 
             self._weather_icon, font=self.icon_font, fill=self.fill_color)
-#poop
+
     def draw_temperature(self):
         self.font_width, self.font_height = self.large_font.getsize(self.temperature)
         self.draw.text((

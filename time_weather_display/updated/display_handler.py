@@ -1,15 +1,8 @@
-import time
-import urllib.request
-import urllib.parse
 import digitalio
 import busio
 import board
 from adafruit_epd.ssd1675 import Adafruit_SSD1675
 from adafruit_epd.ssd1680 import Adafruit_SSD1680
-from secrets import *
-from datetime import datetime
-import json
-from PIL import Image, ImageDraw, ImageFont
 from adafruit_epd.epd import Adafruit_EPD
 
 

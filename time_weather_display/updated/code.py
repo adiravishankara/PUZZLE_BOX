@@ -1,12 +1,5 @@
 import time
-import urllib.request
-import urllib.parse
-import digitalio
-import busio
-import board
-from adafruit_epd.ssd1675 import Adafruit_SSD1675
-from adafruit_epd.ssd1680 import Adafruit_SSD1680
-from secrets import *
+from secrets import get_owm_cred, get_tzdb_cred
 import schedule
 from graphics import *
 from display_handler import *
@@ -20,7 +13,7 @@ class time_weather_display:
         self.tzdb_key = get_tzdb_cred()
         self.owm_key = get_owm_cred()
         self.update_screen()
-        schedule.every(1).minute.do(self.update_screen())
+        schedule.every(1).minutes.do(self.update_screen())
         while True:
             schedule.run_pending()
             time.sleep(1)
