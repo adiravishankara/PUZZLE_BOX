@@ -104,7 +104,7 @@ class graphics:
             ),
 
             self._weather_icon, font=self.icon_font, fill=self.fill_color)
-
+#poop
     def draw_temperature(self):
         self.font_width, self.font_height = self.large_font.getsize(self.temperature)
         self.draw.text((
