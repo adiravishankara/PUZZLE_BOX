@@ -33,40 +33,6 @@ class display_hander:
 
         self.display.rotation = 1
 
-    def load_fonts(self):
-        self.small_font = ImageFont.truetype(
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 16
-        )
-        self.medium_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
-        self.large_font = ImageFont.truetype(
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 24
-        )
-        self.icon_font = ImageFont.truetype("./meteocons.ttf", 48)
-
-    def load_icon_map(self):
-        self.ICON_MAP = {
-            "01d": "B",
-            "01n": "C",
-            "02d": "H",
-            "02n": "I",
-            "03d": "N",
-            "03n": "N",
-            "04d": "Y",
-            "04n": "Y",
-            "09d": "Q",
-            "09n": "Q",
-            "10d": "R",
-            "10n": "R",
-            "11d": "Z",
-            "11n": "Z",
-            "13d": "W",
-            "13n": "W",
-            "50d": "J",
-            "50n": "K"}
-        # RGB Colors
-        self.WHITE = (255, 255, 255)
-        self.BLACK = (0, 0, 0)
-
     def update_screen_full(self, image):
         self.display.fill(Adafruit_EPD.WHITE)
         self.display.image(image)
