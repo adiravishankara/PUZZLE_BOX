@@ -113,7 +113,7 @@ class graphics:
             ),self.temperature, font=self.large_font, fill=self.fill_color)
 
     def draw_city_name(self):
-        self.draw((5, 5), self.city_name, font=self.medium_font, fill=self.fill_color)
+        self.draw.text((5, 5), self.city_name, font=self.medium_font, fill=self.fill_color)
 
     def draw_weather_condition(self):
         self.font_width, self.font_height = self.large_font.getsize(self.weather_condition)
