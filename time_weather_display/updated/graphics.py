@@ -51,6 +51,7 @@ class graphics:
             self.temperature = weather["main"]["feels_like"]
         else:
             self.temperature = weather["main"]["temp"]
+            print(self.temperature)
 
         if not celsius:
             self.temperature = "{} °F".format((self.temperature * 9 / 5 ) + 32)
