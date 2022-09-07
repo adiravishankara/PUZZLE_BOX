@@ -6,7 +6,6 @@ import busio
 import board
 from adafruit_epd.ssd1675 import Adafruit_SSD1675
 from adafruit_epd.ssd1680 import Adafruit_SSD1680
-from graphics import Weather_Graphics
 from secrets import *
 from datetime import datetime
 import json
@@ -17,8 +16,8 @@ from adafruit_epd.epd import Adafruit_EPD
 class display_hander:
     def __init__(self):
         self.load_screen()
-        self.load_fonts()
-        self.load_icon_map()
+        # self.load_fonts()
+        # self.load_icon_map()
 
     def load_screen(self):
         spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
