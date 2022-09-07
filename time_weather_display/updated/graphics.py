@@ -48,12 +48,12 @@ class graphics:
             self.temperature = weather["main"]["feels_like"]
         else:
             self.temperature = weather["main"]["temp"]
-            print(self.temperature)
+            #print(self.temperature)
 
         if not celsius:
             self.temperature = "{} °F".format((self.temperature * 9 / 5 ) + 32)
         else:
-            self.temperature = "{} °C".format(self.temperature)
+            self.temperature = "{} °C".format(int(float(self.temperature)))
 
         self.weather_condition = weather["weather"][0]["main"]
 
@@ -93,11 +93,11 @@ class graphics:
 
 
     def draw_weather_icon(self):
-        self.font_width, self.font_height = self.icon_font.getsize(self._weather_icon)
+        self.icon_width, self.icon_height = self.icon_font.getsize(self._weather_icon)
         self.draw.text(
             (
-                self.d_width // 2 - self.font_width // 2,
-                self.d_height // 2 - self.font_height // 2 - 5,
+                10,
+                self.d_height // 2 - self.icon_height // 2 - 5,
             ),
 
             self._weather_icon, font=self.icon_font, fill=self.fill_color)
@@ -106,17 +106,19 @@ class graphics:
         self.font_width, self.font_height = self.large_font.getsize(self.temperature)
         self.draw.text((
                 self.d_width - self.font_width - 5,
-                self.d_height - self.font_height * 2,
+                self.d_height // 2 - self.icon_height // 2 - 5,
             ),self.temperature, font=self.large_font, fill=self.fill_color)
 
     def draw_city_name(self):
-        self.draw.text((5, 5), self.city_name, font=self.medium_font, fill=self.fill_color)
+        self.font_width, self.font_height = self.medium_font.getsize(self.city_name)
+        self.draw.text((self.d_width // 2 - self.font_width // 2 - 5,
+                        5), self.city_name, font=self.medium_font, fill=self.fill_color)
 
     def draw_weather_condition(self):
         self.font_width, self.font_height = self.large_font.getsize(self.weather_condition)
         self.draw.text((
             5,
-            self.d_height - self.font_height * 2,
+            self.d_height - (self.font_height * 1.5) ,
         ), self.weather_condition, font=self.large_font, fill=self.fill_color)
 
     def draw_weather_description(self):
@@ -127,11 +129,11 @@ class graphics:
         ), self.weather_description, font=self.small_font, fill=self.fill_color)
 
     def draw_time(self):
-        self.font_width, self.font_height = self.medium_font.getsize(self.current_time)
+        self.font_width, self.font_height = self.large_font.getsize(self.current_time)
         self.draw.text((
-            5,
-            self.font_height * 2 - 5,
-        ), self.current_time, font=self.medium_font, fill=self.fill_color)
+            self.d_width - self.font_width - 5,
+            self.d_height - (self.font_height * 1.5),
+        ), self.current_time, font=self.large_font, fill=self.fill_color)
 
 
 
