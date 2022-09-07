@@ -68,7 +68,7 @@ class graphics:
 
         self.city_name = "{}, {}".format(weather["name"][0], weather["sys"]["country"])
 
-        self._weather_icon = self.ICON_MAP[weather]["weather"][0]["icon"]
+        self._weather_icon = self.ICON_MAP[weather["weather"][0]["icon"]]
 
     def parse_time(self, time_data, date=True):
         if date:
