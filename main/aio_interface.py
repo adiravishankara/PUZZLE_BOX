@@ -2,11 +2,18 @@ from secrets import *
 from Adafruit_IO import Client, Feed
 import json
 
-aio_uname, aio_pass = get_aio_cred()
 
-aio = Client("adiravishankara", "aio_VQmJ25zRMeTED2cw3xSZegTKxfdx")
-print(aio.feeds())
+class AIO_INTERFACE:
+    def __init__(self):
+        self.aio_uname, self.aio_pass = get_aio_cred()
+        self.aio = Client(self.aio_uname, self.aio_pass)
 
-pico_feed = aio.feeds('pico')
+    def add_new_feed(self, feed_name):
+        return self.aio.feeds(feed_name)
 
-aio.send_data(pico_feed.key, str(100))
+    def update_feed(self, feed, value):
+        self.aio.send_data(feed.key, value)
+
+    def list_feeds(self):
+        print(self.aio.feeds())
+
