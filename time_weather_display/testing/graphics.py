@@ -135,7 +135,18 @@ class graphics:
             self.d_height - (self.font_height * 1.5),
         ), self.current_time, font=self.large_font, fill=self.fill_color)
 
-
+    def draw_text(self, text, color, font, image=None):
+        if image is None:
+            self.image = Image.new("RGB", (self.d_width, self.d_height), color=self.WHITE)
+        else:
+            self.image = image
+        self.draw = ImageDraw.Draw(self.image)
+        self.font_width, self.font_height = font.getsize(self.text)
+        self.draw.text((
+            self.d_width // 2 - self.font_width //2,
+            self.d_height // 2 - self.font_height // 2,
+        ), text, font=font, fill=color)
+        return self.image
 
 
 

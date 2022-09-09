@@ -30,8 +30,9 @@ class display_hander:
         self.display.image(image)
         self.display.display()
 
-    def update_screen_partial(self, refresh_region, image):
-        pass
+    def update_screen_partial(self, image):
+        self.display.image(image)
+        self.display.display()
 
     def refresh_screen(self):
         self.display.fill(Adafruit_EPD.WHITE)

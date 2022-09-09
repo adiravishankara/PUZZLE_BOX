@@ -12,10 +12,10 @@ class time_weather_display:
         self.graphics = graphics(self.display.display)
         self.tzdb_key = get_tzdb_cred()
         self.owm_key = get_owm_cred()
-        schedule.every(15).seconds.do(lambda: self.update_screen())
-        while True:
-            schedule.run_pending()
-            time.sleep(1)
+        #schedule.every(15).seconds.do(lambda: self.update_screen())
+        # while True:
+        #     schedule.run_pending()
+        #     time.sleep(1)
 
     def update_time(self):
         self.graphics.parse_time(get_time())
@@ -29,8 +29,14 @@ class time_weather_display:
         self.graphics.draw_display()
         self.display.update_screen_full(self.graphics.image)
 
+    def set_screen(self, text, color, font, image=None):
+        self.cur_image = self.graphics.draw_text("HELLO", self.graphics.BLACK, self.graphics.small_font)
+        self.display.update_screen_partial()
+
+
 
 if __name__ == '__main__':
-    time_weather_display()
+    A = time_weather_display()
+    A.set_screen()
 
 
