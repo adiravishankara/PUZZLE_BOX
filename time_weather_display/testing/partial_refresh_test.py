@@ -45,7 +45,7 @@ def draw_text(draw, width, height, font, text, fill):
     ), text, font=font, fill=fill)
 
 def run_display(display, value):
-
+    pass
 
 
 def refresh_screen(display):
