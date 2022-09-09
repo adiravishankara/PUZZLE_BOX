@@ -38,6 +38,7 @@ def load_fonts():
 
 def draw_text(draw, width, height, font, text, fill):
     font_width, font_height = font.getsize(text)
+    print(font_width, font_height)
     draw.text((
         width // 2 - font_width // 2,
         height // 2 - font_height // 2
@@ -56,7 +57,9 @@ def main():
     refresh_screen(display)
     image = Image.new("RGB", (width, height), color=BLACK)
     draw = ImageDraw.Draw(image)
-    display.image(draw_text(draw, width, height, small_font, "HELLO", BLACK))
+    im_1 = draw_text(draw, width, height, small_font, "HELLO", BLACK)
+
+    display.image(im_1)
     display.display()
 
 
