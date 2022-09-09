@@ -44,6 +44,9 @@ def draw_text(draw, width, height, font, text, fill):
         height // 2 - font_height // 2
     ), text, font=font, fill=fill)
 
+def run_display(display, value):
+
+
 
 def refresh_screen(display):
     display.fill(Adafruit_EPD.WHITE)
@@ -59,7 +62,7 @@ def main():
     draw = ImageDraw.Draw(image)
     im_1 = draw_text(draw, width, height, small_font, "HELLO", BLACK)
 
-    display.image(im_1)
+    #display.image(im_1)
     display.display()
 
 
