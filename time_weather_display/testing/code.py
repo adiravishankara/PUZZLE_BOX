@@ -30,13 +30,13 @@ class time_weather_display:
         self.display.update_screen_full(self.graphics.image)
 
     def set_screen(self, text, color, font, image=None):
-        self.cur_image = self.graphics.draw_text("HELLO", self.graphics.BLACK, self.graphics.small_font)
+        self.cur_image = self.graphics.draw_text(text, color, font)
         self.display.update_screen_partial()
 
 
 
 if __name__ == '__main__':
     A = time_weather_display()
-    A.set_screen()
+    A.set_screen("HELLO", A.graphics.BLACK, A.graphics.small_font)
 
 
