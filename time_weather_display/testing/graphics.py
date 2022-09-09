@@ -141,7 +141,7 @@ class graphics:
         else:
             self.image = image
         self.draw = ImageDraw.Draw(self.image)
-        self.font_width, self.font_height = font.getsize(self.text)
+        self.font_width, self.font_height = font.getsize(text)
         self.draw.text((
             self.d_width // 2 - self.font_width //2,
             self.d_height // 2 - self.font_height // 2,
