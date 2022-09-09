@@ -38,5 +38,9 @@ class time_weather_display:
 if __name__ == '__main__':
     A = time_weather_display()
     A.set_screen("HELLO", A.graphics.BLACK, A.graphics.small_font)
+    time.sleep(3)
+    A.set_screen("HELLO", A.graphics.WHITE, A.graphics.small_font)
+    A.set_screen("BYE", A.graphics.BLACK, A.graphics.small_font)
+
 
 
