@@ -22,13 +22,43 @@ def load_screen():
 
     return display
 
+def load_fonts():
+    small_font = ImageFont.truetype(
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 16
+    )
+    medium_font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
+    large_font = ImageFont.truetype(
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 24
+    )
+    icon_font = ImageFont.truetype("./meteocons.ttf", 48)
+
+    WHITE = (255, 255, 255)
+    BLACK = (0, 0, 0)
+    return small_font, medium_font, large_font, icon_font, WHITE, BLACK
+
+def draw_text(draw, width, height, font, text, fill):
+    font_width, font_height = font.getsize(text)
+    draw.text((
+        width // 2 - font_width // 2,
+        height // 2 - font_height // 2
+    ), text, font=font, fill=fill)
+
+
 def refresh_screen(display):
     display.fill(Adafruit_EPD.WHITE)
     display.display()
 
 def main():
     display = load_screen()
+    width = display.width
+    height = display.height
+    small_font, medium_font, large_font, icon_font, WHITE, BLACK = load_fonts()
     refresh_screen(display)
+    image = Image.new("RGB", (width, height), color=BLACK)
+    draw = ImageDraw.Draw(image)
+    display.image(draw_text(draw, width, height, small_font, "HELLO", BLACK))
+    display.display()
+
 
 
 if __name__ == '__main__':
