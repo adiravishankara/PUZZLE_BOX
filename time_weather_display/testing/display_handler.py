@@ -30,7 +30,7 @@ class display_hander:
         self.display.image(image)
         self.display.display()
 
-    def update_screen_partial(self, image):
+    def update_screen_partial(self, refresh_region, image):
         pass
 
     def refresh_screen(self):
