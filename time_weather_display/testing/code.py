@@ -31,7 +31,7 @@ class time_weather_display:
 
     def set_screen(self, text, color, font, image=None):
         self.cur_image = self.graphics.draw_text(text, color, font)
-        self.display.update_screen_partial()
+        self.display.update_screen_partial(self.cur_image)
 
 
 
