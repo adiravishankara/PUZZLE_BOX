@@ -29,3 +29,7 @@ def refresh_screen(display):
 def main():
     display = load_screen()
     refresh_screen(display)
+
+
+if __name__ == '__main__':
+    main()
