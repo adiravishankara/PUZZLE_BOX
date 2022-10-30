@@ -19,9 +19,6 @@ class currentDataUpdater:
         self.AIO.update_feed(self.temp_feed, get)
 
 
-
-
-
 if __name__ == '__main__':
     A = currentDataUpdater()
     A.update_time()
